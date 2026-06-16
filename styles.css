@@ -3400,6 +3400,7 @@ body::-webkit-scrollbar-corner {
 }
 
 #projects .project-wrap {
+    display: block;
     width: clamp(260px, 33vw, 420px);
     padding: 0;
     box-sizing: content-box;
@@ -3412,6 +3413,9 @@ body::-webkit-scrollbar-corner {
     transform: translateY(var(--card-offset)) scale(1);
     transition: transform .38s cubic-bezier(.22, 1, .36, 1), box-shadow .38s cubic-bezier(.22, 1, .36, 1), border-color .38s ease;
     will-change: transform;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
     z-index: 0
 }
 
@@ -10253,7 +10257,7 @@ body.page-services #siteHeader .brand img {
 
 #siteFooter>div {
     width: 100%;
-    padding: 48px 16px
+    padding: 36px 16px
 }
 
 #footerContent {
@@ -10465,7 +10469,7 @@ body.page-services #siteHeader .brand img {
 
 @media (max-width:639px) {
     #siteFooter>div {
-        padding: 26px 14px 16px
+        padding: 22px 14px 12px
     }
 
     #footerContent {
@@ -10487,7 +10491,7 @@ body.page-services #siteHeader .brand img {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        margin-bottom: 28px
+        margin-bottom: 18px
     }
 
     #footerContent>div:nth-child(4)>h4 {
@@ -10561,8 +10565,8 @@ body.page-services #siteHeader .brand img {
         flex: 0 0 auto
     }
 
-    #siteFooter .footer-store-badge img {
-        width: 108px;
+    #siteFooter .footer-store-badge {
+        width: 94px;
         max-width: 100%
     }
 }
@@ -10584,7 +10588,7 @@ body.page-services #siteHeader .brand img {
 
 #siteFooter .footer-heading {
     color: rgba(255, 255, 255, .96);
-    font-size: 18px;
+    font-size: 17px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 800;
     letter-spacing: .02em
@@ -10738,11 +10742,72 @@ body.page-services #siteHeader .brand img {
     filter: none
 }
 
-#siteFooter .footer-store-badge img {
-    width: 133px;
+#siteFooter .footer-store-badge {
+    width: 140px;
     height: auto;
     display: block;
     border-radius: 0
+}
+
+#siteFooter .footer-newsletter {
+    min-width: 0
+}
+
+#siteFooter .footer-newsletter__desc {
+    margin: 0;
+    max-width: 22rem
+}
+
+#siteFooter .footer-newsletter__form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    min-width: 0
+}
+
+#siteFooter .footer-newsletter__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(17, 17, 17, .96);
+    color: rgba(255, 255, 255, .92);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03)
+}
+
+#siteFooter .footer-newsletter__input::placeholder {
+    color: rgba(255, 255, 255, .42)
+}
+
+#siteFooter .footer-newsletter__btn {
+    min-width: 48px;
+    height: 38px;
+    border-radius: 14px;
+    padding: 0 14px;
+    font-weight: 700
+}
+
+#siteFooter .footer-newsletter__install {
+    margin: 12px 0 0
+}
+
+#siteFooter .footer-newsletter__stores {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px
+}
+
+#siteFooter .footer-bottom {
+    margin-top: 28px
+}
+
+#siteFooter .footer-bottom__links {
+    flex-wrap: wrap
 }
 
 @keyframes footerInputGlow {

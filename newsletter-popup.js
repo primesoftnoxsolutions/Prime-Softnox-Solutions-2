@@ -1,5 +1,6 @@
 (() => {
   const isHomePage = () => {
+    if (document.body.classList.contains("page-index")) return true;
     const path = window.location.pathname.replace(/\/+$/, "") || "/";
     return path === "/" || path.endsWith("/index.html");
   };
