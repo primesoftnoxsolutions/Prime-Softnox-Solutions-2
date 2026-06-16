@@ -107,13 +107,31 @@ body.page-index .hero-cta-group a:last-child {
 
   body.page-index .hero-line--mobile {
     display: block;
-    white-space: normal;
+    white-space: nowrap;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  body.page-index .hero-line--mobile-topline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0.22em;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  body.page-index .hero-line--mobile-bottom {
+    display: block;
+    white-space: nowrap;
+    line-height: 0.98;
   }
 
   body.page-index .hero-tech h1 {
-    font-size: clamp(2.45rem, 11vw, 3.45rem);
-    line-height: 1.03;
-    letter-spacing: -.055em;
+    font-size: clamp(1.6rem, 6vw, 2.05rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
   }
 
   body.page-index .hero-tech h1 + p {
@@ -124,9 +142,47 @@ body.page-index .hero-cta-group a:last-child {
 
   body.page-index .hero-tech .hero-proof-strip {
     min-width: 0;
-    width: 100%;
-    max-width: 360px;
-    padding: 8px 11px;
+    width: auto;
+    max-width: min(100%, 320px);
+    margin-inline: auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  body.page-index .hero-tech .hero-proof-avatars {
+    flex: 0 0 auto;
+    margin-right: 0;
+  }
+
+  body.page-index .hero-tech .hero-proof-avatar {
+    width: 28px;
+    height: 28px;
+    margin-left: -6px;
+  }
+
+  body.page-index .hero-tech .hero-proof-avatar:first-child {
+    margin-left: 0;
+  }
+
+  body.page-index .hero-tech .hero-proof-avatar:nth-child(n + 4) {
+    display: none;
+  }
+
+  body.page-index .hero-tech .hero-proof-text {
+    display: block;
+    flex: 0 1 auto;
+    max-width: none;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    font-size: clamp(0.72rem, 2.9vw, 0.84rem);
+    line-height: 1.2;
+    white-space: nowrap;
+    font-weight: 600;
   }
 
   body.page-index .hero-proof-text__desktop {
@@ -138,12 +194,16 @@ body.page-index .hero-cta-group a:last-child {
   }
 
   body.page-index .hero-cta-group {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
     gap: 12px;
   }
 
   body.page-index .hero-cta-group a {
-    width: min(100%, 320px);
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
   }
 }

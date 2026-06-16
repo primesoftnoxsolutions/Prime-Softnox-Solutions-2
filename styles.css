@@ -7136,6 +7136,14 @@ body.page-about .copyright {
         grid-template-rows: auto
     }
 
+    body.page-about .team-gallery__item--tall-right {
+        order: -1
+    }
+
+    body.page-about .team-gallery__item--tall-left {
+        order: 99
+    }
+
     body.page-about .team-gallery__item--sq-mid-a,
     body.page-about .team-gallery__item--sq-mid-b,
     body.page-about .team-gallery__item--sq-top-right,
@@ -10094,11 +10102,19 @@ body.page-services #siteHeader .brand img {
     }
 
     .mobile-dock {
-        position: fixed;
-        inset: auto 0 calc(10px + env(safe-area-inset-bottom, 0px));
-        z-index: 10025;
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+        z-index: 10025 !important;
         pointer-events: none;
-        display: block
+        display: block;
+        margin: 0;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     .mobile-dock__bar {
@@ -10155,12 +10171,15 @@ body.page-services #siteHeader .brand img {
     }
 
     .mobile-dock__fab {
-        position: fixed;
-        right: 16px;
-        bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+        position: fixed !important;
+        right: 16px !important;
+        bottom: calc(104px + env(safe-area-inset-bottom, 0px)) !important;
         width: 62px;
         height: 62px;
-        pointer-events: auto
+        z-index: 10026 !important;
+        pointer-events: auto;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
     }
 
     .mobile-dock__radial {
@@ -10230,6 +10249,10 @@ body.page-services #siteHeader .brand img {
         background: radial-gradient(circle at 35% 28%, rgba(182, 124, 255, .34), rgba(16, 9, 27, .98) 70%);
         color: #f4ebff;
         box-shadow: 0 20px 42px rgba(0, 0, 0, .46), inset 0 1px 0 rgba(255, 255, 255, .08)
+    }
+
+    body.overflow-x-hidden {
+        overflow-x: clip;
     }
 
     .mobile-dock__toggle svg {
